@@ -36,6 +36,7 @@ gem 'font-awesome-rails'
 gem 'awesome_rails_console'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'pry'
 
 
 group :development, :test do
