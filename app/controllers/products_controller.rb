@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
       current_cart.add_product_to_cart(@product)
       flash[:notice] = "成功加入#{@product.title}到购物车！"
     else
-      flash[:warning] = "你的购物车已存在次商品！"
+      flash[:warning] = "你的购物车已存在此商品！"
     end
     redirect_to :back
   end
