@@ -21,14 +21,6 @@ class Order < ApplicationRecord
     self.update_columns(is_paid: true)
   end
 
-  def apply_cancel（order）
-    @order       = order
-    @user        = order.user
-    @product_lists = @order.product_lists
-
-    mail(to: "admin@test.com" , subject: "[JDStore] 用户#{order.user.email}申请取消订单 #{order.token}")
-  end
-
 
   include AASM
 
@@ -48,7 +40,7 @@ class Order < ApplicationRecord
       transitions from: :paid, to: :shipping
     end
 
-    event :diliver do
+    event :deliver do
       transitions from: :shipping, to: :shipped
     end
 
